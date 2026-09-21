@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Brunella Lorca — Directora Creativa | InteliGRAFIX Studio</title>
+  
+  <!-- Meta tags SEO y Open Graph -->
+  <meta name="description" content="Tarjeta de presentación digital de Brunella Lorca. Directora Creativa en InteliGRAFIX Studio. Diseño + Tecnología aplicada." />
+  <meta property="og:title" content="Brunella Lorca — Directora Creativa" />
+  <meta property="og:description" content="InteliGRAFIX Studio · Diseño + Tecnología aplicada" />
+  <meta property="og:type" content="profile" />
+  <meta name="theme-color" content="#eef1f6" />
+
+  <!-- Google Fonts: Plus Jakarta Sans / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       SISTEMA DE DISEÑO: LIQUID GLASS (APPLE / FROSTED AESTHETIC)
+    ============================================================ */
+    :root {
+      /* Fondo general */
+      --canvas-bg: #ebf0f7;
+      
+      /* Sombras y Luces Líquidas */
+      --liquid-glass-bg: rgba(255, 255, 255, 0.68);
+      --liquid-glass-capsule: rgba(255, 255, 255, 0.82);
+      --liquid-glass-inner: rgba(255, 255, 255, 0.45);
+      --liquid-border: rgba(255, 255, 255, 0.85);
+      --liquid-border-subtle: rgba(255, 255, 255, 0.5);
+      
+      /* Reflejos especulares (iluminación tipo lente de cristal) */
+      --glass-shadow: 
+        0 20px 40px -10px rgba(100, 116, 139, 0.16),
+        0 8px 16px -4px rgba(100, 116, 139, 0.1),
+        inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1.5px 2px 0 rgba(148, 163, 184, 0.18);
+
+      --pill-shadow: 
+        0 6px 16px -2px rgba(100, 116, 139, 0.12),
+        0 2px 4px rgba(100, 116, 139, 0.06),
+        inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.98),
+        inset 0 -1px 1px 0 rgba(148, 163, 184, 0.15);
+
+      --puck-shadow:
+        0 10px 25px -4px rgba(100, 116, 139, 0.18),
+        0 4px 8px -2px rgba(100, 116, 139, 0.08),
+        inset 0 2px 1.5px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1.5px 2px 0 rgba(148, 163, 184, 0.2);
+
+      /* Botón verde líquido WhatsApp (inspirado en el switch de la referencia) */
+      --liquid-green: #22c55e;
+      --liquid-green-gradient: linear-gradient(135deg, #2dd4bf 0%, #22c55e 50%, #16a34a 100%);
+      --liquid-green-shadow: 
+        0 10px 25px -3px rgba(34, 197, 94, 0.42),
+        0 4px 10px -2px rgba(34, 197, 94, 0.25),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 3px rgba(21, 128, 61, 0.35);
+
+      /* Tipografía */
+      --text-dark: #0f172a;
+      --text-medium: #334155;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+
+      /* Radios */
+      --radius-pill: 9999px;
+      --radius-squircle: 36px;
+      --radius-card: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 14px;
+      position: relative;
+      overflow-x: hidden;
+      
+      /* Grid de diseño milimétrico como en Figma / Apple Studio */
+      background-image: 
+        linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-position: center center;
+    }
+
+    /* Manchas líquidas de color que se refractan detrás del cristal */
+    .ambient-sphere {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.55;
+    }
+
+    .sphere-1 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, #4ade80 0%, #22c55e 50%, rgba(34,197,94,0) 70%);
+      top: 5%;
+      left: 10%;
+    }
+
+    .sphere-2 {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, #818cf8 0%, #c084fc 50%, rgba(192,132,252,0) 70%);
+      bottom: 2%;
+      right: 5%;
+      opacity: 0.45;
+    }
+
+    .sphere-3 {
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, #38bdf8 0%, rgba(56,189,248,0) 70%);
+      top: 40%;
+      right: 15%;
+      opacity: 0.4;
+    }
+
+    /* ============================================================
+       TARJETA PRINCIPAL: SLAB DE CRISTAL LÍQUIDO
+    ============================================================ */
+    .liquid-card {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 440px;
+      background: var(--liquid-glass-bg);
+      backdrop-filter: blur(28px) saturate(170%);
+      -webkit-backdrop-filter: blur(28px) saturate(170%);
+      border: 1.5px solid var(--liquid-border);
+      border-radius: var(--radius-squircle);
+      padding: 28px 24px 26px;
+      box-shadow: var(--glass-shadow);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: floatIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* ============================================================
+       BARRA SUPERIOR (HEADER ESTILO APPLE LIQUID GLASS)
+    ============================================================ */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    /* Botón cápsula / Pill de disponibilidad */
+    .status-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--liquid-glass-capsule);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--liquid-border);
+      padding: 7px 15px 7px 10px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--pill-shadow);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.2px;
+    }
+
+    /* Cápsula verde líquida dentro del switch */
+    .liquid-toggle-indicator {
+      width: 22px;
+      height: 14px;
+      background: var(--liquid-green-gradient);
+      border-radius: var(--radius-pill);
+      position: relative;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 2px;
+    }
+
+    .liquid-toggle-indicator::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Botón circular de vidrio líquido (Puck / Lens) */
+    .liquid-puck-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--liquid-glass-capsule);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1.2px solid var(--liquid-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      box-shadow: var(--pill-shadow);
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .liquid-puck-btn:hover {
+      transform: translateY(-2px) scale(1.05);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--puck-shadow);
+    }
+
+    .liquid-puck-btn:active {
+      transform: translateY(0) scale(0.96);
+    }
+
+    /* ============================================================
+       AVATAR LENTE LÍQUIDA (ESTILO LENTE FIGMA DE LA IMAGEN)
+    ============================================================ */
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    /* Anillos concéntricos de vidrio como en el diseño de referencia */
+    .avatar-lens-container {
+      position: relative;
+      width: 116px;
+      height: 116px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lens-outer-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.6);
+    }
+
+    .lens-inner-ring {
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 
+        0 8px 24px -2px rgba(100, 116, 139, 0.18),
+        inset 0 2px 2px rgba(255, 255, 255, 0.95),
+        inset 0 -2px 3px rgba(148, 163, 184, 0.2);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(255, 255, 255, 0.72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Iniciales BL con estilo tipográfico bold */
+    .avatar-initials {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, #0f172a 30%, #475569 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      user-select: none;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Textos del perfil */
+    .profile-name {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: -0.6px;
+      margin-bottom: 4px;
+      line-height: 1.15;
+    }
+
+    .profile-role-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid var(--liquid-border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 4px 14px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-medium);
+      margin-bottom: 8px;
+      box-shadow: 0 2px 6px rgba(100, 116, 139, 0.06);
+    }
+
+    .profile-role-capsule strong {
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .profile-tagline {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .profile-tagline .dot {
+      width: 5px;
+      height: 5px;
+      background: #8b5cf6;
+      border-radius: 50%;
+    }
+
+    /* ============================================================
+       LOS 3 SERVICIOS (TARJETAS DE CRISTAL LÍQUIDO)
+    ============================================================ */
+    .services-wrapper {
+      margin-bottom: 22px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      padding-left: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .service-pill-card {
+      background: var(--liquid-glass-capsule);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.2px solid var(--liquid-border);
+      border-radius: 20px;
+      padding: 13px 15px;
+      margin-bottom: 9px;
+      box-shadow: var(--pill-shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-pill-card:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 10px 22px -4px rgba(100, 116, 139, 0.15), inset 0 1.5px 1px #fff;
+    }
+
+    /* Icono en burbuja líquida translúcida */
+    .service-lens-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(241, 245, 249, 0.7));
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 
+        0 4px 10px rgba(100, 116, 139, 0.08),
+        inset 0 1px 1px #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      flex-shrink: 0;
+    }
+
+    .service-info h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.2px;
+      margin-bottom: 2px;
+    }
+
+    .service-info p {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* ============================================================
+       BOTÓN WHATSAPP DESTACADO (LIQUID SWITCH DE LA IMAGEN)
+    ============================================================ */
+    .cta-area {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+
+    /* Botón verde líquido con estilo Glassmorphic Slider */
+    .btn-liquid-whatsapp {
+      position: relative;
+      background: var(--liquid-green-gradient);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: var(--radius-pill);
+      padding: 15px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.2px;
+      box-shadow: var(--liquid-green-shadow);
+      border: 1.5px solid rgba(255, 255, 255, 0.65);
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Efecto de refracción líquida superior */
+    .btn-liquid-whatsapp::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 14px;
+      right: 14px;
+      height: 48%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 100%);
+      border-radius: var(--radius-pill);
+      pointer-events: none;
+    }
+
+    .btn-liquid-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -3px rgba(34, 197, 94, 0.55), inset 0 1.5px 2px rgba(255,255,255,0.8);
+    }
+
+    .btn-liquid-whatsapp:active {
+      transform: translateY(0);
+    }
+
+    /* Botón Guardar Contacto (Liquid Glass Pill) */
+    .btn-liquid-secondary {
+      background: var(--liquid-glass-capsule);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1.2px solid var(--liquid-border);
+      border-radius: var(--radius-pill);
+      padding: 13px 20px;
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      box-shadow: var(--pill-shadow);
+      cursor: pointer;
+      transition: all 0.22s ease;
+      width: 100%;
+    }
+
+    .btn-liquid-secondary:hover {
+      background: rgba(255, 255, 255, 0.95);
+      transform: translateY(-1.5px);
+      box-shadow: 0 8px 18px -2px rgba(100, 116, 139, 0.15);
+    }
+
+    .btn-liquid-secondary:active {
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       GRID DE ENLACES Y REDES SOCIALES
+    ============================================================ */
+    .links-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .liquid-link-capsule {
+      background: var(--liquid-glass-capsule);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.2px solid var(--liquid-border);
+      border-radius: var(--radius-pill);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--text-medium);
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: var(--pill-shadow);
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
+
+    .liquid-link-capsule span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .liquid-link-capsule:hover {
+      background: #ffffff;
+      color: var(--text-dark);
+      transform: translateY(-1.5px);
+      box-shadow: 0 8px 18px -2px rgba(100, 116, 139, 0.14);
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    /* Footer discreto */
+    .card-bottom-footer {
+      text-align: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       MODAL QR & TOAST NOTIFICATION EN LIQUID GLASS
+    ============================================================ */
+    .glass-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.25);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      padding: 20px;
+    }
+
+    .glass-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .glass-modal-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1.5px solid #ffffff;
+      border-radius: var(--radius-squircle);
+      padding: 28px 24px;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+      transform: scale(0.92);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-modal-overlay.active .glass-modal-card {
+      transform: scale(1);
+    }
+
+    .glass-modal-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .glass-modal-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .qr-lens-box {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 22px;
+      display: inline-block;
+      box-shadow: var(--puck-shadow);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .qr-lens-box img {
+      display: block;
+      width: 180px;
+      height: 180px;
+    }
+
+    .modal-close-pill {
+      background: var(--text-dark);
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.88rem;
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .modal-close-pill:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+
+    /* Toast flotante */
+    .liquid-toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(70px);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      color: var(--text-dark);
+      border: 1.2px solid #ffffff;
+      padding: 11px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 0.84rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 16px 32px rgba(100, 116, 139, 0.22);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+
+    .liquid-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Esferas líquidas difusas para el fondo tipo Liquid Glass -->
+  <div class="ambient-sphere sphere-1" aria-hidden="true"></div>
+  <div class="ambient-sphere sphere-2" aria-hidden="true"></div>
+  <div class="ambient-sphere sphere-3" aria-hidden="true"></div>
+
+  <!-- TARJETA PRINCIPAL (SLAB DE CRISTAL LÍQUIDO) -->
+  <main class="liquid-card" role="region" aria-label="Tarjeta Digital de Brunella Lorca">
+    
+    <!-- Barra Superior: Switch de estado y Botones circulares estilo Apple -->
+    <header class="top-bar">
+      <!-- Cápsula con Switch de disponibilidad -->
+      <div class="status-capsule" title="Disponible para proyectos y colaboraciones">
+        <span class="liquid-toggle-indicator"></span>
+        <span>Disponible</span>
+      </div>
+
+      <div class="top-actions">
+        <!-- Botón Ver QR -->
+        <button class="liquid-puck-btn" id="qrBtn" title="Ver código QR" aria-label="Mostrar código QR">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </button>
+
+        <!-- Botón Compartir -->
+        <button class="liquid-puck-btn" id="shareBtn" title="Compartir tarjeta" aria-label="Compartir enlace">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sección de Perfil: Avatar Lente Líquida & Datos -->
+    <section class="profile-section">
+      <!-- Lente con anillos concéntricos inspirados en la referencia -->
+      <div class="avatar-lens-container">
+        <div class="lens-outer-ring"></div>
+        <div class="lens-inner-ring" id="profileAvatar">
+          <!-- 
+            FOTO:
+            Actualmente muestra las iniciales "BL".
+            Para sustituirlo por tu foto real en el futuro, simplemente reemplaza el <span> por:
+            <img src="tu-foto.jpg" alt="Brunella Lorca" class="avatar-img" />
+          -->
+          <span class="avatar-initials">BL</span>
+        </div>
+      </div>
+
+      <h1 class="profile-name">Brunella Lorca</h1>
+      
+      <div class="profile-role-capsule">
+        <span>Directora creativa</span>
+        <span>&bull;</span>
+        <strong>InteliGRAFIX Studio</strong>
+      </div>
+
+      <div class="profile-tagline">
+        <span class="dot"></span>
+        <span>Diseño + Tecnología aplicada</span>
+      </div>
+    </section>
+
+    <!-- Sección de los 3 Servicios Especializados -->
+    <section class="services-wrapper" aria-label="Servicios">
+      <h2 class="section-eyebrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span>Servicios Especializados</span>
+      </h2>
+
+      <!-- Servicio 1: Branding -->
+      <article class="service-pill-card">
+        <div class="service-lens-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+        </div>
+        <div class="service-info">
+          <h4>Identidad de Marca & Branding</h4>
+          <p>Sistemas visuales integrales, dirección de arte e identidad estratégica.</p>
+        </div>
+      </article>
+
+      <!-- Servicio 2: Modelado 3D -->
+      <article class="service-pill-card">
+        <div class="service-lens-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <div class="service-info">
+          <h4>Modelado & Visualización 3D</h4>
+          <p>Renders hiperrealistas de producto, modelado técnico y piezas digitales 3D.</p>
+        </div>
+      </article>
+
+      <!-- Servicio 3: UI/UX & Web -->
+      <article class="service-pill-card">
+        <div class="service-lens-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <div class="service-info">
+          <h4>Diseño UI/UX & Web Tecnológica</h4>
+          <p>Experiencias digitales intuitivas de alta conversión y estética de vanguardia.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Botones de Acción (WhatsApp Verde Líquido & Guardar Contacto) -->
+    <section class="cta-area" aria-label="Acciones de Contacto">
+      <!-- WhatsApp Verde Líquido -->
+      <a 
+        href="https://wa.me/5491166492347?text=Hola%20Brunella,%20vi%20tu%20tarjeta%20digital%20y%20me%20gustar%C3%ADa%20pedirte%20un%20presupuesto%20para%20un%20proyecto." 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="btn-liquid-whatsapp"
+        id="btnWhatsapp"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.073.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.184 1.564 5.938l-1.664 6.078 6.257-1.64c1.701.928 3.655 1.454 5.733 1.454 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        <span>Pídeme presupuesto</span>
+      </a>
+
+      <!-- Botón Guardar Contacto -->
+      <button class="btn-liquid-secondary" id="btnSaveContact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+          <polyline points="17 21 17 13 7 13 7 21"></polyline>
+          <polyline points="7 3 7 8 15 8"></polyline>
+        </svg>
+        <span>Guardar contacto (.vcf)</span>
+      </button>
+    </section>
+
+    <!-- Matriz de Enlaces Rápidos y Redes -->
+    <section class="links-matrix" aria-label="Enlaces de contacto">
+      <!-- Web Estudio -->
+      <a href="https://inteligrafix.com" target="_blank" rel="noopener noreferrer" class="liquid-link-capsule full-width">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>inteligrafix.com</span>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:info@inteligrafix.com" class="liquid-link-capsule">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Email</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/brunella-l-08b745303" target="_blank" rel="noopener noreferrer" class="liquid-link-capsule">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+
+      <!-- Instagram @dilbianco.studio -->
+      <a href="https://instagram.com/dilbianco.studio" target="_blank" rel="noopener noreferrer" class="liquid-link-capsule">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span>@dilbianco</span>
+      </a>
+
+      <!-- Instagram @dil3d.studio -->
+      <a href="https://instagram.com/dil3d.studio" target="_blank" rel="noopener noreferrer" class="liquid-link-capsule">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span>@dil3d.studio</span>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="card-bottom-footer">
+      <span>InteliGRAFIX Studio &bull; Creatividad & Tecnología</span>
+      <span>Buenos Aires &bull; Proyectos Globales</span>
+    </footer>
+  </main>
+
+  <!-- MODAL CÓDIGO QR (CRISTAL LÍQUIDO) -->
+  <div class="glass-modal-overlay" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+    <div class="glass-modal-card">
+      <h3 id="qrTitle">Escanea mi Tarjeta</h3>
+      <p>Apunta con la cámara de tu móvil para abrir esta tarjeta digital al instante.</p>
+      
+      <div class="qr-lens-box">
+        <img id="qrImage" src="" alt="Código QR de Brunella Lorca" />
+      </div>
+
+      <button class="modal-close-pill" id="qrCloseBtn">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICACIÓN -->
+  <div class="liquid-toast" id="toastNotification">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Enlace copiado al portapapeles</span>
+  </div>
+
+  <!-- JAVASCRIPT: VCARD, QR, SHARE & TOAST -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. GENERACIÓN Y DESCARGA VCARD (.VCF)
+      const saveBtn = document.getElementById('btnSaveContact');
+      
+      saveBtn.addEventListener('click', () => {
+        const vCardData = [
+          'BEGIN:VCARD',
+          'VERSION:3.0',
+          'N:Lorca;Brunella;;;',
+          'FN:Brunella Lorca',
+          'ORG:InteliGRAFIX Studio',
+          'TITLE:Directora Creativa',
+          'TEL;TYPE=CELL,VOICE:+5491166492347',
+          'EMAIL;TYPE=WORK,INTERNET:info@inteligrafix.com',
+          'URL;TYPE=WORK:https://inteligrafix.com',
+          'X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/brunella-l-08b745303',
+          'X-SOCIALPROFILE;type=instagram:https://instagram.com/dilbianco.studio',
+          'X-SOCIALPROFILE;type=instagram:https://instagram.com/dil3d.studio',
+          'NOTE:Diseño + Tecnología aplicada · InteliGRAFIX Studio',
+          'END:VCARD'
+        ].join('\r\n');
+
+        const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+        const downloadUrl = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        
+        link.href = downloadUrl;
+        link.setAttribute('download', 'Brunella_Lorca_InteliGRAFIX.vcf');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(downloadUrl);
+
+        showToast('Contacto descargado listo para guardar');
+      });
+
+      // 2. MODAL CÓDIGO QR
+      const qrBtn = document.getElementById('qrBtn');
+      const qrModal = document.getElementById('qrModal');
+      const qrCloseBtn = document.getElementById('qrCloseBtn');
+      const qrImage = document.getElementById('qrImage');
+
+      const currentUrl = window.location.href.startsWith('http') 
+        ? window.location.href 
+        : 'https://inteligrafix.com';
+
+      qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(currentUrl)}&margin=10`;
+
+      qrBtn.addEventListener('click', () => {
+        qrModal.classList.add('active');
+      });
+
+      qrCloseBtn.addEventListener('click', () => {
+        qrModal.classList.remove('active');
+      });
+
+      qrModal.addEventListener('click', (e) => {
+        if (e.target === qrModal) {
+          qrModal.classList.remove('active');
+        }
+      });
+
+      // 3. COMPARTIR TARJETA (Web Share API nativa o Copiar)
+      const shareBtn = document.getElementById('shareBtn');
+      
+      shareBtn.addEventListener('click', async () => {
+        const shareData = {
+          title: 'Brunella Lorca — Directora Creativa',
+          text: 'Tarjeta digital de Brunella Lorca | InteliGRAFIX Studio — Diseño + Tecnología aplicada',
+          url: currentUrl
+        };
+
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {}
+        } else {
+          copyToClipboard(currentUrl);
+        }
+      });
+
+      function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            showToast('¡Enlace copiado al portapapeles!');
+          }).catch(() => {
+            fallbackCopy(text);
+          });
+        } else {
+          fallbackCopy(text);
+        }
+      }
+
+      function fallbackCopy(text) {
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        showToast('¡Enlace copiado al portapapeles!');
+      }
+
+      // 4. TOAST NOTIFICACIONES
+      function showToast(message) {
+        const toast = document.getElementById('toastNotification');
+        const toastMsg = document.getElementById('toastMessage');
+        toastMsg.textContent = message;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3200);
+      }
+    });
+  </script>
+</body>
+</html>
